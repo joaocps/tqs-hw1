@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+
+https://www.baeldung.com/thymeleaf-iteration
+-->
+
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>MyProject</title>
+</head>
+<style>
+h1 {
+    text-align: center;
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.80em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: #00008B;
+}
+li {color: #556B2F;}
+</style>
+<body>
+<h1>Weather Project - TQS</h1>
+<h1>
+    <form method="post">
+        <div class="form-group">
+            <input type="text" name="local">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit" formaction="/dayweather" value="dayweather">
+                Get day weather!
+            </button>
+            <button class="btn btn-primary" type="submit" formaction="/weekweather" value="weekweather">
+                Get week weather!
+            </button>
+        </div>
+    </form>
+</h1>
+    
+
+
+</body>
+</html>
