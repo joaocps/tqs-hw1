@@ -5,19 +5,14 @@
  */
 package com.tqsHW1.WeatherProject.Controllers;
 
-import java.net.http.HttpHeaders;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -40,19 +35,22 @@ public class ViewController {
     public String returnIndex() {
         return index;
     }
-    
-    
+        
     @PostMapping(path = "dayweather")
     public @ResponseBody Object getDayWeather(@RequestParam("local") String local) {
 
         RestTemplate restTemplate = new RestTemplate();
         //HttpHeaders headers = new HttpHeaders();
-
-        ResponseEntity<Object> oneday = restTemplate.
+        
+        try{
+            ResponseEntity<Object> oneday = restTemplate.
                 getForEntity(WEATHER_URL + "weather" + "?q=" + local + "&appid=" + MY_KEY + END_URL,
                 Object.class);
-
-        return oneday;
+            return oneday;
+        } catch(HttpStatusCodeException exception) {
+            return ResponseEntity.status(exception.getRawStatusCode()).headers(exception.getResponseHeaders())
+                .body(exception.getResponseBodyAsString());
+        }   
     }
     
     @PostMapping(path = "weekweather")
@@ -61,13 +59,16 @@ public class ViewController {
         RestTemplate restTemplate = new RestTemplate();
         //HttpHeaders headers = new HttpHeaders();
 
-        ResponseEntity<Object> week = restTemplate.
+        try{
+            ResponseEntity<Object> week = restTemplate.
                 getForEntity(WEATHER_URL + "forecast" + "?q=" + local + "&appid=" + MY_KEY + END_URL,
                 Object.class);
+            return week;
+        }catch(HttpStatusCodeException exception) {
+            return ResponseEntity.status(exception.getRawStatusCode()).headers(exception.getResponseHeaders())
+                .body(exception.getResponseBodyAsString());
+        }
 
-        return week;
     }
     
-    
-
 }

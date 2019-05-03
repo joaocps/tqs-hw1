@@ -13,9 +13,4 @@ public class WeatherProjectApplication {
         SpringApplication.run(WeatherProjectApplication.class, args);
     }
 
-    /*@Bean
-    public RestTemplate restTemplate(RestTemplateBuilder builder) {
-        return builder.build();
-    }*/
-
 }
