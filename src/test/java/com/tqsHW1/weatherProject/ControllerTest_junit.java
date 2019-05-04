@@ -41,7 +41,7 @@ public class ControllerTest_junit {
     public void testViewControllerIndex() {
         System.out.println("TEST INDEX");
         String result = viewController.returnIndex();
-        assertEquals(result, "index");
+        assertEquals("index", result);
     }
     
     @Test
