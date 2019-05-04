@@ -27,6 +27,7 @@ public class ViewController {
     private static final String WEATHER_URL = "https://api.openweathermap.org/data/2.5/";
     private static final String END_URL = "&units=metric";
     private static final String MY_KEY = "f15d322fc88c404f0560bf7423da5a98";
+    //Payed option
     private static final String BEFOREDAYS = "&cnt=";
 
     private String index = "index";
