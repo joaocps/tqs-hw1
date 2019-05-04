@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.tqsHW1.weatherProject.CurrentWeather
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 25.488 s <<< FAILURE! - in com.tqsHW1.weatherProject.CurrentWeather
-testCurrentWeather(com.tqsHW1.weatherProject.CurrentWeather)  Time elapsed: 25.303 s  <<< ERROR!
-java.lang.NullPointerException
-	at com.tqsHW1.weatherProject.CurrentWeather.testCurrentWeather(CurrentWeather.java:44)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.055 s - in com.tqsHW1.weatherProject.CurrentWeather

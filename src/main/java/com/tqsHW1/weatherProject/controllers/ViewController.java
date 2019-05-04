@@ -38,11 +38,12 @@ public class ViewController {
     @PostMapping(path = "dayweather")
     public @ResponseBody Object getDayWeather(@RequestParam("local") String local) {
 
+        String requestDayFormation = WEATHER_URL + "weather" + "?q=" + local + "&appid=" + MY_KEY + END_URL;
         RestTemplate restTemplate = new RestTemplate();
         
         try{
             ResponseEntity<Object> oneday = restTemplate.
-                getForEntity(WEATHER_URL + "weather" + "?q=" + local + "&appid=" + MY_KEY + END_URL,
+                getForEntity(requestDayFormation,
                 Object.class);
             return oneday;
         } catch(HttpStatusCodeException exception) {
@@ -53,12 +54,13 @@ public class ViewController {
     
     @PostMapping(path = "weekweather")
     public @ResponseBody Object getWeekWeather(@RequestParam("local") String local) {
-
+        
+        String requestWeekFormation = WEATHER_URL + "forecast" + "?q=" + local + "&appid=" + MY_KEY + END_URL;
         RestTemplate restTemplate = new RestTemplate();
 
         try{
             ResponseEntity<Object> week = restTemplate.
-                getForEntity(WEATHER_URL + "forecast" + "?q=" + local + "&appid=" + MY_KEY + END_URL,
+                getForEntity(requestWeekFormation,
                 Object.class);
             return week;
         }catch(HttpStatusCodeException exception) {
