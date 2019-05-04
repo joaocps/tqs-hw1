@@ -1,4 +1,4 @@
-package com.tqsHW1.WeatherProject;
+package com.tqsHW1.weatherProject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

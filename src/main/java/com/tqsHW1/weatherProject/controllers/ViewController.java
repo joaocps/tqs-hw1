@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tqsHW1.WeatherProject.Controllers;
+package com.tqsHW1.weatherProject.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,8 +27,6 @@ public class ViewController {
     private static final String WEATHER_URL = "https://api.openweathermap.org/data/2.5/";
     private static final String END_URL = "&units=metric";
     private static final String MY_KEY = "f15d322fc88c404f0560bf7423da5a98";
-    //Payed option
-    private static final String BEFOREDAYS = "&cnt=";
 
     private String index = "index";
 
@@ -41,7 +39,6 @@ public class ViewController {
     public @ResponseBody Object getDayWeather(@RequestParam("local") String local) {
 
         RestTemplate restTemplate = new RestTemplate();
-        //HttpHeaders headers = new HttpHeaders();
         
         try{
             ResponseEntity<Object> oneday = restTemplate.
@@ -58,7 +55,6 @@ public class ViewController {
     public @ResponseBody Object getWeekWeather(@RequestParam("local") String local) {
 
         RestTemplate restTemplate = new RestTemplate();
-        //HttpHeaders headers = new HttpHeaders();
 
         try{
             ResponseEntity<Object> week = restTemplate.

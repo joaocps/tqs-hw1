@@ -1,6 +1,6 @@
-package com.tqsHW1.WeatherProject;
+package com.tqsHW1.weatherProject;
 
-import com.tqsHW1.WeatherProject.Controllers.ViewController;
+import com.tqsHW1.weatherProject.controllers.ViewController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

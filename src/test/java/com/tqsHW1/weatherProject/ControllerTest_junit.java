@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tqsHW1.WeatherProject;
+package com.tqsHW1.weatherProject;
 
-import com.tqsHW1.WeatherProject.Controllers.ViewController;
+import com.tqsHW1.weatherProject.controllers.ViewController;
 import org.json.JSONObject;
 import org.junit.After;
 import org.junit.AfterClass;
